@@ -174,32 +174,23 @@ const Contact = () => {
             </div>
 
             {/* Join Us CTA */}
-            <div className="bg-green rounded-2xl p-8 text-black">
-              <div className="flex items-center mb-4">
-                <Users className="h-6 w-6 mr-2" />
-                <h3 className="text-xl font-bold">Join Our Community</h3>
-              </div>
-              <p className="text-black/80 mb-4">
-                Interested in being part of Crosslinks? We're always looking for passionate individuals to join our team.
-              </p>
-              <Link
-                to="/team"
-                className="inline-flex items-center space-x-2 bg-black/20 text-black px-4 py-2 rounded-full font-medium hover:bg-black/30 transition-colors"
-              >
-                <span>Learn More</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-                  <div className="flex justify-between">
-                    <span className="font-medium text-gray-300">Sunday</span>
-                    <span className="text-gray-400">Closed</span>
-                  </div>
+            <div className="space-y-8">
+              {/* Join Us CTA */}
+              <div className="bg-green rounded-2xl p-8 text-black">
+                <div className="flex items-center mb-4">
+                  <Users className="h-6 w-6 mr-2" />
+                  <h3 className="text-xl font-bold">Join Our Community</h3>
                 </div>
-                <div className="mt-6 p-4 bg-green/10 rounded-lg border border-green/20">
-                  <p className="text-sm text-green">
-                    <strong>Note:</strong> Response times may vary during exam periods and holidays. We appreciate your patience!
-                  </p>
-                </div>
+                <p className="text-black/80 mb-4">
+                  Interested in being part of Crosslinks? We're always looking for passionate individuals to join our team.
+                </p>
+                <Link
+                  to="/team"
+                  className="inline-flex items-center space-x-2 bg-black/20 text-black px-4 py-2 rounded-full font-medium hover:bg-black/30 transition-colors"
+                >
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
 
               {/* Team Info */}

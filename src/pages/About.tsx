@@ -32,7 +32,7 @@ const About = () => {
   const departments = [
     {
       icon: Users,
-      name: 'Core Members',
+      name: 'Content Department',
       description: 'Leadership team guiding the vision and strategy of Crosslinks across all departments.',
       color: 'from-green to-green-dark',
       members: 8
@@ -67,29 +67,6 @@ const About = () => {
     }
   ];
 
-  const values = [
-    {
-      icon: Target,
-      title: 'Excellence',
-      description: 'We strive for perfection in every shot, every story, every design.'
-    },
-    {
-      icon: Users,
-      title: 'Community',
-      description: 'Building connections and fostering the NSUT spirit through our work.'
-    },
-    {
-      icon: Heart,
-      title: 'Passion',
-      description: 'Driven by love for creative expression and storytelling.'
-    },
-    {
-      icon: Award,
-      title: 'Innovation',
-      description: 'Embracing new technologies and creative approaches to media.'
-    }
-  ];
-
   return (
     <div className="pt-16 bg-dark">
       {/* Hero Section */}
@@ -112,48 +89,6 @@ const About = () => {
                   </div>
                   <p className="text-gray-400">Image Placeholder</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-green mb-8">Our Story</h2>
-              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                Founded with the vision of becoming "The Face of NSUT," Crosslinks has grown from 
-                a small group of passionate students to the university's premier media organization. 
-                We believe in the power of visual storytelling to connect, inspire, and preserve memories.
-              </p>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Through our lens, we capture not just images and videos, but emotions, achievements, 
-                and the vibrant spirit of campus life. Every project we undertake is a step towards 
-                building a stronger, more connected NSUT community.
-              </p>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green mb-2">45+</div>
-                  <div className="text-gray-400">Active Members</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green mb-2">200+</div>
-                  <div className="text-gray-400">Events Covered</div>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Team collaboration"
-                className="rounded-2xl shadow-2xl border border-green/20"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-green text-black p-6 rounded-2xl shadow-xl">
-                <Users className="h-8 w-8 mb-2" />
-                <div className="font-bold">United by Creativity</div>
               </div>
             </div>
           </div>
@@ -231,30 +166,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-dark border-t border-green/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-green mb-4">Our Values</h2>
-            <p className="text-xl text-gray-300">The principles that guide everything we do</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="text-center bg-dark/50 backdrop-blur-sm rounded-2xl border border-green/20 p-8 hover:bg-dark/70 hover:border-green/40 transition-all duration-300 hover:scale-105"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green/20 rounded-2xl mb-6">
-                  <value.icon className="h-8 w-8 text-green" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

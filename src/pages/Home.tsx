@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Camera, Video, Edit3, Palette, Users, Calendar, Image, UserPlus } from 'lucide-react';
+import { ArrowRight, Camera, Video, Edit3, Palette, Users, Calendar, Image, UserPlus, Target, Heart, Award } from 'lucide-react';
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -122,6 +122,52 @@ const Home = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 bg-dark border-t border-green/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-green mb-4">Our Values</h2>
+            <p className="text-xl text-gray-300">The principles that guide everything we do</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Target,
+                title: 'Excellence',
+                description: 'We strive for perfection in every shot, every story, every design.'
+              },
+              {
+                icon: Users,
+                title: 'Community',
+                description: 'Building connections and fostering the NSUT spirit through our work.'
+              },
+              {
+                icon: Heart,
+                title: 'Passion',
+                description: 'Driven by love for creative expression and storytelling.'
+              },
+              {
+                icon: Award,
+                title: 'Innovation',
+                description: 'Embracing new technologies and creative approaches to media.'
+              }
+            ].map((value, index) => (
+              <div
+                key={index}
+                className="text-center bg-dark/50 backdrop-blur-sm rounded-2xl border border-green/20 p-8 hover:bg-dark/70 hover:border-green/40 transition-all duration-300 hover:scale-105"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-green/20 rounded-2xl mb-6">
+                  <value.icon className="h-8 w-8 text-green" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{value.description}</p>
+              </div>
             ))}
           </div>
         </div>

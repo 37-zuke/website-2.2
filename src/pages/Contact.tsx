@@ -90,10 +90,10 @@ const Contact = () => {
 
       {/* Main Content Grid */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Contact Form */}
-            <div className="max-w-4xl mx-auto">
+            <div>
               <div className="bg-dark-card rounded-2xl border border-green/20 shadow-2xl p-8 lg:p-12">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold text-green mb-4">Send us a Message</h2>
@@ -172,31 +172,37 @@ const Contact = () => {
                 </form>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Social Media Section */}
-      <section className="py-20 bg-dark-card border-t border-green/20">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-green mb-12">Let's Connect</h2>
-          
-          <div className="flex justify-center space-x-8">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                className="group flex flex-col items-center space-y-3 p-6 rounded-2xl bg-dark border border-green/20 hover:border-green/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green/20"
-              >
-                <div className={`p-4 rounded-full bg-gradient-to-br ${social.gradient} group-hover:scale-110 transition-transform duration-300`}>
-                  <social.icon className="h-8 w-8 text-black" />
+            {/* Vertical Divider */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-green/20 transform -translate-x-1/2"></div>
+
+            {/* Social Media Section */}
+            <div>
+              <div className="bg-dark-card rounded-2xl border border-green/20 shadow-2xl p-8 lg:p-12">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl font-bold text-green mb-4">Let's Connect</h2>
+                  <p className="text-gray-300">Follow us on social media for updates and behind-the-scenes content</p>
                 </div>
-                <div className="text-center">
-                  <h3 className="font-bold text-white group-hover:text-green transition-colors">{social.name}</h3>
-                  <p className="text-sm text-gray-400">{social.handle}</p>
+
+                <div className="grid grid-cols-2 gap-6">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      className="group flex flex-col items-center space-y-3 p-6 rounded-2xl bg-dark border border-green/20 hover:border-green/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green/20"
+                    >
+                      <div className={`p-4 rounded-full bg-gradient-to-br ${social.gradient} group-hover:scale-110 transition-transform duration-300`}>
+                        <social.icon className="h-8 w-8 text-black" />
+                      </div>
+                      <div className="text-center">
+                        <h3 className="font-bold text-white group-hover:text-green transition-colors">{social.name}</h3>
+                        <p className="text-sm text-gray-400">{social.handle}</p>
+                      </div>
+                    </a>
+                  ))}
                 </div>
-              </a>
-            ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

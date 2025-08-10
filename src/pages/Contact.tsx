@@ -91,9 +91,9 @@ const Contact = () => {
       {/* Main Content Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16">
             {/* Contact Form */}
-            <div>
+            <div className="max-w-4xl mx-auto">
               <div className="bg-dark-card rounded-2xl border border-green/20 shadow-2xl p-8 lg:p-12">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold text-green mb-4">Send us a Message</h2>
@@ -172,41 +172,31 @@ const Contact = () => {
                 </form>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Join Us CTA */}
-            <div className="space-y-8">
-              {/* Join Us CTA */}
-              <div className="bg-green rounded-2xl p-8 text-black">
-                <div className="flex items-center mb-4">
-                  <Users className="h-6 w-6 mr-2" />
-                  <h3 className="text-xl font-bold">Join Our Community</h3>
+      {/* Social Media Section */}
+      <section className="py-20 bg-dark-card border-t border-green/20">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-green mb-12">Let's Connect</h2>
+          
+          <div className="flex justify-center space-x-8">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                className="group flex flex-col items-center space-y-3 p-6 rounded-2xl bg-dark border border-green/20 hover:border-green/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green/20"
+              >
+                <div className={`p-4 rounded-full bg-gradient-to-br ${social.gradient} group-hover:scale-110 transition-transform duration-300`}>
+                  <social.icon className="h-8 w-8 text-black" />
                 </div>
-                <p className="text-black/80 mb-4">
-                  Interested in being part of Crosslinks? We're always looking for passionate individuals to join our team.
-                </p>
-                <Link
-                  to="/team"
-                  className="inline-flex items-center space-x-2 bg-black/20 text-black px-4 py-2 rounded-full font-medium hover:bg-black/30 transition-colors"
-                >
-                  <span>Learn More</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-
-              {/* Team Info */}
-              <div className="bg-green rounded-2xl p-8 text-black">
-                <div className="flex items-center mb-4">
-                  <Users className="h-6 w-6 mr-2" />
-                  <h3 className="text-xl font-bold">Quick Response Team</h3>
+                <div className="text-center">
+                  <h3 className="font-bold text-white group-hover:text-green transition-colors">{social.name}</h3>
+                  <p className="text-sm text-gray-400">{social.handle}</p>
                 </div>
-                <p className="text-black/80 mb-4">
-                  Our dedicated team typically responds to inquiries within 24-48 hours during business days.
-                </p>
-                <div className="text-sm text-black/70">
-                  Average response time: <strong className="text-black">6 hours</strong>
-                </div>
-              </div>
-            </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
